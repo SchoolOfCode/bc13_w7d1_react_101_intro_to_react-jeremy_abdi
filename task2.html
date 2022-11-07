@@ -23,12 +23,22 @@
       function handleClick(e) {
         alert("You clicked me!");
       }
-      function Button() {
+      function Button(button, className) {
         // code here
-        return ;
+        return React.createElement(
+          "button",
+          {className:className, onClick:handleClick},
+          button
+        ) ;
       }
+      
+      
+// 👉 Fill in the Button function component which returns a react element `React.createElement`
 
-      root.render(Button());
+// 👉 Give the element a `className` of `"button"`.
+
+// ⭐ Bonus: Have the `handleClick` function added to the `{ onClick: }` attribute.
+      root.render(Button("New button", "button"));
     </script>
   </body>
 </html>
