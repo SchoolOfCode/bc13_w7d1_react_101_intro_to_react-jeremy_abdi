@@ -21,12 +21,23 @@
       const rootElement = document.querySelector("#root");
       const root = ReactDOM.createRoot(rootElement);
 
+      
       function CheckBox(props) {
         // render a checkbox that is controlled by the checked prop
-        return
+        const checked = props.checked
+        if(checked) {
+          return <input type="checkbox" checked="checked"/>
+        }
+        return <input type="checkbox" />
       }
 
-      root.render([<CheckBox checked={true} />]);
+      //use conditional operator
+      function CheckBox(props) {
+        // render a checkbox that is controlled by the checked prop
+        return <input type="checkbox" checked = {props.checked? "checked" : ""}/>
+      }
+
+      root.render([<CheckBox checked={true} />, <CheckBox checked={false} />] );
     </script>
   </body>
 </html>
